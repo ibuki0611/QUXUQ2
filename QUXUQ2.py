@@ -23,7 +23,7 @@ client = tweepy.Client(
 )
 
 # 監視するターゲットのTwitterユーザーID(3つ)
-TARGET_USER_IDS = ["user1", "user2", "user3"]  # 監視するアカウントのID
+TARGET_USER_IDS = ["skt65536_sub1", "skt65536_sub1", "skt65536_sub1"]  # 監視するアカウントのID
 current_index = 0  # どのアカウントを監視するか管理
 
 # 送信履歴を保存するファイル
