@@ -47,6 +47,8 @@ def save_replied_users(replied_users):
 
 # 送信履歴を読み込む
 replied_users = load_replied_users()
+if not os.path.exists(HISTORY_FILE):
+    save_replied_users(set())
 
 # リプライ候補のリスト
 REPLY_MESSAGES = [
