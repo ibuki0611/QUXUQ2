@@ -21,7 +21,7 @@ jobs:
         run: |
           pip install tweepy
 
-      - name: QUXUQ2
+      - name: QUXUQ2 実行
         env:
           BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
           API_KEY: ${{ secrets.API_KEY }}
@@ -29,3 +29,10 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
         run: python QUXUQ2.py
+
+      - name: replied_users.json をアーティファクトとして保存
+        if: success()  # スクリプトが成功したときだけ保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: replied-users-log
+          path: replied_users.json
